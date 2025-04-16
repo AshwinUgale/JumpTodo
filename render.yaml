@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: todo-jump
+    env: elixir
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: _build/prod/rel/todo_jump/bin/todo_jump start
+    envVars:
+      - key: MIX_ENV
+        value: prod
+      - key: SECRET_KEY_BASE
+        generateValue: true
